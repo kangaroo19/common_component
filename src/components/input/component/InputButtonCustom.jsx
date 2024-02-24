@@ -16,11 +16,16 @@ export default function InputButtonCustom({
   onClick,
   text,
 }) {
+  if (type !== 'button' && type !== 'submit') {
+    throw new Error(
+      `Invalid type '${type}' for InputButtonCustom. Type must be 'button' or 'submit'.`
+    );
+  }
+
   return (
     <input
       type={type}
       onClick={onClick}
-      onSubmit={onClick}
       className={`${divideStyleIDString(styles, styleID)}`}
       value={text}
     />

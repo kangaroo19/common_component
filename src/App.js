@@ -12,7 +12,7 @@ const initialState = {
 // onChangeFormData (커스텀훅)을 FormMain 컴포넌트에 두려 했으나
 // 버튼 컴포넌트 때문에 안됨
 
-// 결론적으로 커스텀훅은 컴포넌트별로 생성되는데 
+// 결론적으로 커스텀훅은 컴포넌트별로 생성되는데
 // 같은 상태 공유가 안됨
 // 그렇다고 zustand를 써도 안됨
 // 예를 들어 로그인 컴포넌트가 있고
@@ -29,13 +29,17 @@ function App() {
     <>
       <FormMain onChange={onChangeFormData}>
         <FormMain.Input name="id" placeholder="아이디를 입력해 주세요" />
-        <FormMain.Input name="pw" placeholder="비밀번호를 입력해 주세요" />
+        <FormMain.Input
+          type="password"
+          name="pw"
+          placeholder="비밀번호를 입력해 주세요"
+        />
         <FormMain.Checkbox name="checkbox1" />
         <FormMain.Checkbox name="checkbox2" />
         <FormMain.Checkbox name="checkbox3" />
         <FormMain.Radio name="radio1" />
         <FormMain.Button
-          type="submit"
+          type="button"
           styleID="login"
           text="로그인"
           onClick={onClick}
