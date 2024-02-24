@@ -1,6 +1,6 @@
 import FormMain from './components/input/FormMain';
-import { useInputFieldHook } from './utils/hook/useInputFieldHook.js';
-
+// import { useInputFieldHook } from './utils/hook/useInputFieldHook.js';
+import { useInputField } from './utils/zustand/useInputField';
 const initialState = {
   id: '',
   pw: '',
@@ -19,8 +19,13 @@ const initialState = {
 // 회원가입 컴포넌트가 있다고 가정하고
 // zustand 코드로 구현하면 로그인,회원가입 둘다 같이 상태공유가되므로
 // 안됨!
+
+// 생각해보니 여러가지 문제들 때문에
+// 초기값 페이지 랜더링 될 때와 실제 값 서로 다름 
+// zustand 사용하고 각기 다른 스토어 사용하면 되는거 아닌가?
+// 근데 그러면 코드 갈아 엎어야함 ㅎ
 function App() {
-  const { formData, onChangeFormData } = useInputFieldHook(initialState);
+  const { formData, onChangeFormData } = useInputField();
   const onClick = (event) => {
     event.preventDefault();
     console.log(formData);
@@ -34,7 +39,7 @@ function App() {
           name="pw"
           placeholder="비밀번호를 입력해 주세요"
         />
-        <FormMain.Label htmlFor="checkbox1">체크박스1</FormMain.Label>
+        {/* <FormMain.Label htmlFor="checkbox1">체크박스1</FormMain.Label>
         <FormMain.Checkbox name="checkbox1" id="checkbox1" />
         <>
           <FormMain.Label htmlFor="radio1">라디오1</FormMain.Label>
@@ -42,12 +47,12 @@ function App() {
         </>
         <>
           <FormMain.Label htmlFor="radio2">라디오2</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오2" id="radio2"/>
+          <FormMain.Radio name="radio1" value="라디오2" id="radio2" />
         </>
         <>
           <FormMain.Label htmlFor="radio3">라디오3</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오3" id="radio3"/>
-        </>
+          <FormMain.Radio name="radio1" value="라디오3" id="radio3" />
+        </> */}
         <FormMain.Button
           type="button"
           styleID="login"
