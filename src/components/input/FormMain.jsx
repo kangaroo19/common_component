@@ -4,6 +4,7 @@ import InputButtonCustom from './component/InputButtonCustom';
 import InputFieldCustom from './component/InputFieldCustom';
 import CheckboxCustom from './component/CheckboxCustom';
 import RadioButton from './component/RadioButton';
+import LabelCustom from './component/LabelCustom';
 
 export default function FormMain({ children, styleID, onChange }) {
   return (
@@ -21,6 +22,7 @@ FormMain.Input = InputFieldCustom;
 FormMain.Button = InputButtonCustom;
 FormMain.Checkbox = CheckboxCustom;
 FormMain.Radio = RadioButton;
+FormMain.Label = LabelCustom;
 // inputField 이벤트 버블링 이용하여 form태그에 onChange 달면
 // form 태그 하위에 라디오 버튼 있을때도 onChange함수 호출됨
 

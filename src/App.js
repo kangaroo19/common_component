@@ -34,10 +34,20 @@ function App() {
           name="pw"
           placeholder="비밀번호를 입력해 주세요"
         />
-        <FormMain.Checkbox name="checkbox1" />
-        <FormMain.Checkbox name="checkbox2" />
-        <FormMain.Checkbox name="checkbox3" />
-        <FormMain.Radio name="radio1" />
+        <FormMain.Label htmlFor="checkbox1">체크박스1</FormMain.Label>
+        <FormMain.Checkbox name="checkbox1" id="checkbox1" />
+        <>
+          <FormMain.Label htmlFor="radio1">라디오1</FormMain.Label>
+          <FormMain.Radio name="radio1" value="라디오1" id="radio1" />
+        </>
+        <>
+          <FormMain.Label htmlFor="radio2">라디오2</FormMain.Label>
+          <FormMain.Radio name="radio1" value="라디오2" id="radio2"/>
+        </>
+        <>
+          <FormMain.Label htmlFor="radio3">라디오3</FormMain.Label>
+          <FormMain.Radio name="radio1" value="라디오3" id="radio3"/>
+        </>
         <FormMain.Button
           type="button"
           styleID="login"
