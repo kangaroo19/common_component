@@ -16,6 +16,7 @@ export default function InputFieldCustom({
   styleID,
   name,
   placeholder,
+  value
 }) {
   if (type !== 'text' && type !== 'password') {
     throw new Error(
@@ -26,6 +27,7 @@ export default function InputFieldCustom({
     <input
       type={type}
       name={name}
+      value={value}
       placeholder={placeholder}
       className={`${divideStyleIDString(styles, styleID)}`}
     />

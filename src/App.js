@@ -2,12 +2,10 @@ import FormMain from './components/input/FormMain';
 import { useInputFieldHook } from './utils/hook/useInputFieldHook.js';
 
 const initialState = {
-  id: '',
-  pw: '',
-  checkbox1: false,
-  checkbox2: false,
-  checkbox3: false,
-  radio1: false,
+  id: '아디요',
+  pw: 'asdfasdf',
+  checkbox1: true,
+  radio1: null,
 };
 // onChangeFormData (커스텀훅)을 FormMain 컴포넌트에 두려 했으나
 // 버튼 컴포넌트 때문에 안됨
@@ -28,25 +26,34 @@ function App() {
   return (
     <>
       <FormMain onChange={onChangeFormData}>
-        <FormMain.Input name="id" placeholder="아이디를 입력해 주세요" />
+        <FormMain.Input
+          name="id"
+          placeholder="아이디를 입력해 주세요"
+          value={formData.id}
+        />
         <FormMain.Input
           type="password"
           name="pw"
           placeholder="비밀번호를 입력해 주세요"
+          value={formData.pw}
         />
         <FormMain.Label htmlFor="checkbox1">체크박스1</FormMain.Label>
-        <FormMain.Checkbox name="checkbox1" id="checkbox1" />
+        <FormMain.Checkbox
+          name="checkbox1"
+          id="checkbox1"
+          value={formData.checkbox1}
+        />
         <>
           <FormMain.Label htmlFor="radio1">라디오1</FormMain.Label>
           <FormMain.Radio name="radio1" value="라디오1" id="radio1" />
         </>
         <>
           <FormMain.Label htmlFor="radio2">라디오2</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오2" id="radio2"/>
+          <FormMain.Radio name="radio1" value="라디오2" id="radio2" />
         </>
         <>
           <FormMain.Label htmlFor="radio3">라디오3</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오3" id="radio3"/>
+          <FormMain.Radio name="radio1" value="라디오3" id="radio3" />
         </>
         <FormMain.Button
           type="button"
