@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import divideStyleIDString from '../../../utils/divideStyleIDString';
 import { useInputField } from '../../../utils/zustand/useInputField';
 import styles from '../style/InputCustom.module.css';
@@ -18,17 +19,20 @@ export default function InputFieldCustom({
   name,
   placeholder,
 }) {
-  const { formData } = useInputField();
-  if (type !== 'text' && type !== 'password') {
-    throw new Error(
-      `Invalid type '${type}' for InputButtonCustom. Type must be 'text' or 'password'.`
-    );
-  }
+  const { formData, initialLizeFormData } = useInputField();
+  useEffect(() => {
+    if (type !== 'text' && type !== 'password') {
+      throw new Error(
+        `Invalid type '${type}' for InputButtonCustom. Type must be 'text' or 'password'.`
+      );
+    }
+    initialLizeFormData(name);
+  }, []);
   return (
     <input
       type={type}
       name={name}
-      value={formData.name}
+      value={formData[name]}
       placeholder={placeholder}
       className={`${divideStyleIDString(styles, styleID)}`}
     />

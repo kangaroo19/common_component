@@ -1,7 +1,16 @@
+import { useEffect } from 'react';
 import divideStyleIDString from '../../../utils/divideStyleIDString';
+import { useInputField } from '../../../utils/zustand/useInputField';
 import styles from '../style/RadioButton.module.css';
 
-export default function RadioButton({ styleID, name, id, value }) {
+//value 서버로 보낼 값
+// checked
+
+export default function RadioButton({ styleID, name, id, value, checked }) {
+  const { initialLizeFormData } = useInputField();
+  useEffect(() => {
+    initialLizeFormData(name);
+  }, []);
   return (
     <input
       type="radio"
