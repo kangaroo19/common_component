@@ -2,9 +2,9 @@ import FormMain from './components/input/FormMain';
 import { useInputFieldHook } from './utils/hook/useInputFieldHook.js';
 
 const initialState = {
-  id: '아디요',
-  pw: 'asdfasdf',
-  checkbox1: true,
+  id: '',
+  pw: '',
+  checkbox1: true, //첫 랜더링시 체크상태로 
   radio1: null,
 };
 // onChangeFormData (커스텀훅)을 FormMain 컴포넌트에 두려 했으나
