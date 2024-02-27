@@ -18,6 +18,8 @@ export default function InputFieldCustom({
   styleID,
   name,
   placeholder,
+  initialState,
+  value,
 }) {
   const { formData, initialLizeFormData } = useInputField();
   useEffect(() => {
@@ -26,7 +28,7 @@ export default function InputFieldCustom({
         `Invalid type '${type}' for InputButtonCustom. Type must be 'text' or 'password'.`
       );
     }
-    initialLizeFormData(name);
+    initialLizeFormData(name, initialState);
   }, []);
   return (
     <input

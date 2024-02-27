@@ -7,9 +7,9 @@ import styles from '../style/RadioButton.module.css';
 // checked
 
 export default function RadioButton({ styleID, name, id, value, checked }) {
-  const { initialLizeFormData } = useInputField();
+  const { formData, initialLizeFormData } = useInputField();
   useEffect(() => {
-    initialLizeFormData(name);
+    initialLizeFormData(name, checked && value);
   }, []);
   return (
     <input
@@ -17,6 +17,7 @@ export default function RadioButton({ styleID, name, id, value, checked }) {
       name={name}
       id={id}
       value={value}
+      checked={formData[name] === value}
       className={`${divideStyleIDString(styles, styleID)}`}
     />
   );
