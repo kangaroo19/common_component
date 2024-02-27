@@ -1,4 +1,5 @@
 import FormMain from './components/input/FormMain';
+import SelectMain from './components/select/SelectMain';
 // import { useInputFieldHook } from './utils/hook/useInputFieldHook.js';
 import { useInputField } from './utils/zustand/useInputField';
 const initialState = {
@@ -49,12 +50,7 @@ function App() {
         </div>
         <div>
           <FormMain.Label htmlFor="radio2">라디오2</FormMain.Label>
-          <FormMain.Radio
-            name="radio1"
-            value="라디오2"
-            id="radio2"
-            checked
-          />
+          <FormMain.Radio name="radio1" value="라디오2" id="radio2" checked />
         </div>
         <div>
           <FormMain.Label htmlFor="radio3">라디오3</FormMain.Label>
@@ -67,6 +63,11 @@ function App() {
           onClick={onClick}
         />
       </FormMain>
+      <SelectMain>
+        <SelectMain.Option>1</SelectMain.Option>
+        <SelectMain.Option>2</SelectMain.Option>
+        <SelectMain.Option>3</SelectMain.Option>
+      </SelectMain>
     </>
   );
 }
