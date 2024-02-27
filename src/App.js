@@ -1,10 +1,11 @@
 import FormMain from './components/input/FormMain';
+import SelectMain from './components/select/SelectMain.jsx';
 import { useInputFieldHook } from './utils/hook/useInputFieldHook.js';
 
 const initialState = {
   id: '',
   pw: '',
-  checkbox1: true, //첫 랜더링시 체크상태로 
+  checkbox1: true, //첫 랜더링시 체크상태로
   radio1: null,
 };
 // onChangeFormData (커스텀훅)을 FormMain 컴포넌트에 두려 했으나
@@ -61,6 +62,11 @@ function App() {
           text="로그인"
           onClick={onClick}
         />
+        <SelectMain name="select">
+          <SelectMain.Option value="1">1</SelectMain.Option>
+          <SelectMain.Option value="2">2</SelectMain.Option>
+          <SelectMain.Option value="3">3</SelectMain.Option>
+        </SelectMain>
       </FormMain>
     </>
   );
