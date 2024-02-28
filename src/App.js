@@ -31,8 +31,7 @@ function App() {
         <FormMain.Input
           name="id"
           placeholder="아이디를 입력해 주세요"
-          value={formData.id}
-          initialState="느금마"
+          // initialState="느금마"
         />
         <FormMain.Input
           type="password"
@@ -50,7 +49,7 @@ function App() {
         </div>
         <div>
           <FormMain.Label htmlFor="radio2">라디오2</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오2" id="radio2" checked />
+          <FormMain.Radio name="radio1" value="라디오2" id="radio2" />
         </div>
         <div>
           <FormMain.Label htmlFor="radio3">라디오3</FormMain.Label>
@@ -64,7 +63,7 @@ function App() {
           onClick={onClick}
         />
       </FormMain>
-      <Home />
+      {/* <Home /> */}
       {/* <SelectMain>
         <SelectMain.Option>1</SelectMain.Option>
         <SelectMain.Option>2</SelectMain.Option>

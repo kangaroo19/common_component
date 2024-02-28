@@ -12,7 +12,7 @@ export default function CheckboxCustom({
 }) {
   const { formData, initialLizeFormData } = useInputField();
   useEffect(() => {
-    initialLizeFormData(name, checked);
+    initialLizeFormData('checkbox', name, checked);
   }, []);
   return (
     <input

@@ -3,13 +3,10 @@ import divideStyleIDString from '../../../utils/divideStyleIDString';
 import { useInputField } from '../../../utils/zustand/useInputField';
 import styles from '../style/RadioButton.module.css';
 
-//value 서버로 보낼 값
-// checked
-
 export default function RadioButton({ styleID, name, id, value, checked }) {
-  const { formData, initialLizeFormData } = useInputField();
+  const { initialLizeFormData } = useInputField();
   useEffect(() => {
-    initialLizeFormData(name, checked && value);
+    initialLizeFormData('radio', name, checked && value ? value : '너검');
   }, []);
   return (
     <input
@@ -17,7 +14,7 @@ export default function RadioButton({ styleID, name, id, value, checked }) {
       name={name}
       id={id}
       value={value}
-      checked={formData[name] === value}
+      defaultChecked={checked}
       className={`${divideStyleIDString(styles, styleID)}`}
     />
   );

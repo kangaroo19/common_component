@@ -36,6 +36,9 @@ export default function Home() {
         />
         웹디자인
       </form>
+      <input type="radio" name="1" />
+      <input type="radio" name="1" checked={true} />
+      <input type="radio" name="1" />
     </>
   );
 }
