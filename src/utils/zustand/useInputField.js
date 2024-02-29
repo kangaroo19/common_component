@@ -1,54 +1,63 @@
 /* eslint-disable */
 import { create } from 'zustand';
 
+const initializeInputField = (prevState, name, initialValue) => ({
+  formData: {
+    ...prevState.formData,
+    [name]: initialValue ? initialValue : '',
+  },
+});
+
+const initializeCheckbox = (prevState, name, initialValue) => ({
+  formData: {
+    ...prevState.formData,
+    [name]: initialValue ? true : false,
+  },
+});
+
+const initializeRadio = (prevState, get, name, initialValue) => {
+  if (!get().formData.hasOwnProperty(String(name))) {
+    return {
+      formData: {
+        ...prevState.formData,
+        [name]: initialValue ? initialValue : null,
+      },
+    };
+  } else if (initialValue) {
+    return {
+      formData: {
+        ...prevState.formData,
+        [name]: initialValue,
+      },
+    };
+  }
+  return {};
+};
+
+const initializeSelect = (prevState, name, initialValue) => ({
+  formData: {
+    ...prevState.formData,
+    [name]: initialValue ? initialValue : null,
+  },
+});
+
 export const useInputField = create((set, get) => ({
   formData: {},
   initialLizeFormData: (inputType, name, initialValue) => {
-    // 각 상태 프로퍼티 초기화
-    // value가 없을떄 인풋 타입별 초기값 다르게 하기 위함 값 할당은 삼항연산자로 처리
     switch (inputType) {
       case 'inputField':
-        return set((prevState) => ({
-          formData: {
-            ...prevState.formData,
-            [name]: initialValue ? initialValue : '',
-          },
-        }));
+        set((prevState) => initializeInputField(prevState, name, initialValue));
+        break;
       case 'checkbox':
-        return set((prevState) => ({
-          formData: {
-            ...prevState.formData,
-            [name]: initialValue ? true : false,
-          },
-        }));
+        set((prevState) => initializeCheckbox(prevState, name, initialValue));
+        break;
       case 'radio':
-        // 라디오 버튼 name 프로퍼티 존재하지 않을 때 초기값 할당 위함
-        if (!get().formData.hasOwnProperty(String(name))) {
-          set((prevState) => ({
-            formData: {
-              ...prevState.formData,
-              [name]: initialValue ? initialValue : null,
-            },
-          }));
-        }
-        // checked 프롭 존재할 때 value 값 할당 위함
-        //
-        else {
-          if (!initialValue) return;
-          set((prevState) => ({
-            formData: { ...prevState.formData, [name]: initialValue },
-          }));
-        }
+        set((prevState) => initializeRadio(prevState, get, name, initialValue));
         break;
       case 'select':
-        return set((prevState) => ({
-          formData: {
-            ...prevState.formData,
-            [name]: initialValue ? initialValue : null,
-          },
-        }));
-
-      default: //에러처리
+        set((prevState) => initializeSelect(prevState, name, initialValue));
+        break;
+      default: //
         throw Error('올바른 inputType 값을 입력해 주세요');
     }
   },
