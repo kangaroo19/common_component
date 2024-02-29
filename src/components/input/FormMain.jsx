@@ -1,7 +1,7 @@
 import divideStyleIDString from '../../utils/divideStyleIDString';
 import styles from './FormMain.module.css';
 import InputButtonCustom from './component/InputButtonCustom';
-import InputFieldCustom from './component/InputFieldCustom';
+import InputTextCustom from './component/InputTextCustom';
 import CheckboxCustom from './component/CheckboxCustom';
 import RadioButton from './component/RadioButton';
 import LabelCustom from './component/LabelCustom';
@@ -18,7 +18,7 @@ export default function FormMain({ children, styleID, onChange }) {
   );
 }
 
-FormMain.Input = InputFieldCustom;
+FormMain.Input = InputTextCustom;
 FormMain.Button = InputButtonCustom;
 FormMain.Checkbox = CheckboxCustom;
 FormMain.Radio = RadioButton;

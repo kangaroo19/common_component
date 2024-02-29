@@ -28,24 +28,18 @@ function App() {
   return (
     <>
       <FormMain onChange={onChangeFormData}>
-        <FormMain.Input
-          name="id"
-          placeholder="아이디를 입력해 주세요"
-          // initialState="느금마"
-        />
+        <FormMain.Input name="id" placeholder="아이디를 입력해 주세요" />
         <FormMain.Input
           type="password"
           name="pw"
           placeholder="비밀번호를 입력해 주세요"
-          initialState="느금마123123"
         />
         <FormMain.Label htmlFor="checkbox1">체크박스1</FormMain.Label>
         <FormMain.Checkbox name="checkbox1" id="checkbox1" checked />
         <FormMain.Checkbox name="checkbox2" id="checkbox2" />
-
         <div>
           <FormMain.Label htmlFor="radio1">라디오1</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오1" id="radio1" />
+          <FormMain.Radio name="radio1" value="라디오1" id="radio1" checked />
         </div>
         <div>
           <FormMain.Label htmlFor="radio2">라디오2</FormMain.Label>
@@ -57,18 +51,17 @@ function App() {
         </div>
 
         <FormMain.Button
-          type="button"
+          type="submit"
           styleID="login"
           text="로그인"
           onClick={onClick}
         />
+        <SelectMain name="select">
+          <SelectMain.Option>1</SelectMain.Option>
+          <SelectMain.Option>2</SelectMain.Option>
+          <SelectMain.Option>3</SelectMain.Option>
+        </SelectMain>
       </FormMain>
-      {/* <Home /> */}
-      {/* <SelectMain>
-        <SelectMain.Option>1</SelectMain.Option>
-        <SelectMain.Option>2</SelectMain.Option>
-        <SelectMain.Option>3</SelectMain.Option>
-      </SelectMain> */}
     </>
   );
 }

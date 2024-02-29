@@ -1,26 +1,18 @@
-import { createContext } from 'react';
+import { createContext, useEffect } from 'react';
 import divideStyleIDString from '../../utils/divideStyleIDString';
 import styles from './SelectMain.module.css';
 import OptionCustom from './component/OptionCustom';
+import { useInputField } from '../../utils/zustand/useInputField';
 
-const selectContext = createContext({});
-
-export default function SelectMain({
-  children,
-  styleID,
-  onChange,
-  disabled,
-  id,
-  name,
-}) {
-  const onChangeOption = (event) => {
-    console.log(event.target.value);
-  };
+export default function SelectMain({ children, styleID, disabled, id, name }) {
+  const { initialLizeFormData } = useInputField();
+  useEffect(() => {
+    initialLizeFormData('select', name);
+  }, []);
   return (
     <select
       name={name}
       id={id}
-      onChange={onChangeOption}
       disabled={disabled}
       className={`${divideStyleIDString(styles, styleID)}`}
     >
