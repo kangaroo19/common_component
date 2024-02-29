@@ -1,11 +1,10 @@
-var a = 1;
-var outer = function () {
-  var inner = function () {
-    console.log(a);
-    var a = 3;
-  };
-  inner();
-  console.log(a);
+var obj = {
+  0: 'a',
+  1: 'b',
+  2: 'c',
+  length: 3,
 };
-outer();
-console.log(a);
+
+Array.prototype.push.call(obj, 'd');
+
+console.log(obj);
