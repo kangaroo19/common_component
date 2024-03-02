@@ -1,4 +1,4 @@
-import { createContext, useEffect } from 'react';
+import { useEffect } from 'react';
 import divideStyleIDString from '../../utils/divideStyleIDString';
 import styles from './SelectMain.module.css';
 import OptionCustom from './component/OptionCustom';
