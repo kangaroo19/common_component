@@ -10,7 +10,7 @@ export default function SuperheroesPage() {
   // 우리가 흔히 useState,useEffect을 사용하던 방식의 get 요청
   useEffect(() => {
     axios
-      .get('http://localhost:4000/superher1oes')
+      .get('http://localhost:4000/superheroes')
       .then((res) => {
         setData(res.data);
         setIsLoading(false);

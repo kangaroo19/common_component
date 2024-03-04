@@ -4,7 +4,7 @@ import HomePage from './pages/Home.page';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import './App.css';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
-
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 const queryClient = new QueryClient();
 
 function App() {
@@ -38,6 +38,7 @@ function App() {
           </Switch>
         </div>
       </Router>
+      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 }
