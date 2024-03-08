@@ -1,7 +1,7 @@
-import Home from './Home';
-import FormMain from './components/input/FormMain';
-import SelectMain from './components/select/SelectMain';
-// import { useInputFieldHook } from './utils/hook/useInputFieldHook.js';
+import FormA from './components/FormA/FormA';
+import FormB from './components/FormA/FormB';
+import FormC from './components/FormA/FormC';
+import CustomButton from './components/buttons/CustomButton';
 import { useInputField } from './utils/zustand/useInputField';
 
 // onChangeFormData (커스텀훅)을 FormMain 컴포넌트에 두려 했으나
@@ -20,48 +20,17 @@ import { useInputField } from './utils/zustand/useInputField';
 // zustand 사용하고 각기 다른 스토어 사용하면 되는거 아닌가?
 // 근데 그러면 코드 갈아 엎어야함 ㅎ
 function App() {
-  const { formData, onChangeFormData } = useInputField();
+  const { formData } = useInputField();
   const onClick = (event) => {
     event.preventDefault();
     console.log(formData);
   };
   return (
     <>
-      <FormMain onChange={onChangeFormData}>
-        <FormMain.Input name="id" placeholder="아이디를 입력해 주세요" />
-        <FormMain.Input
-          type="password"
-          name="pw"
-          placeholder="비밀번호를 입력해 주세요"
-        />
-        <FormMain.Label htmlFor="checkbox1">체크박스1</FormMain.Label>
-        <FormMain.Checkbox name="checkbox1" id="checkbox1" checked />
-        <FormMain.Checkbox name="checkbox2" id="checkbox2" />
-        <div>
-          <FormMain.Label htmlFor="radio1">라디오1</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오1" id="radio1" checked />
-        </div>
-        <div>
-          <FormMain.Label htmlFor="radio2">라디오2</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오2" id="radio2" />
-        </div>
-        <div>
-          <FormMain.Label htmlFor="radio3">라디오3</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오3" id="radio3" />
-        </div>
-
-        <FormMain.Button
-          type="submit"
-          styleID="login"
-          text="로그인"
-          onClick={onClick}
-        />
-        <SelectMain name="select">
-          <SelectMain.Option>1</SelectMain.Option>
-          <SelectMain.Option>2</SelectMain.Option>
-          <SelectMain.Option>3</SelectMain.Option>
-        </SelectMain>
-      </FormMain>
+      {/* <FormA />
+      <FormB />
+      <CustomButton text="확인" onClick={onClick} /> */}
+      <FormC />
     </>
   );
 }
@@ -78,3 +47,13 @@ export default App;
 // 들어가는게 아님
 // radio,checkbox 등 의 태그가 들어갈 수도 있음
 // input/ radio.checkbox 구분하는 로직 필요
+
+// 2024-03-08
+// 결론부터 이거 쓰레기임
+// 재사용성 전혀 없음
+// 각각의 재사용한답시고 만든 컴포넌트들 (체크박스,인풋필드..등)
+// useInputField라는 스토어사용하는데
+// 이러면 다른 페이지에서 사용하려고 아무리 코드만 동일하고
+// 따로 스토어를 만든다고 해도
+// 각각의 컴포넌트들은 내부에서 useInputField를 사용하므로
+// 쓰레기
