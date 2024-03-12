@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import CustomButton from './components/buttons/CustomButton.jsx';
 import FormMain from './components/input/FormMain';
 import SelectMain from './components/select/SelectMain.jsx';
 import { useInputFieldHook } from './utils/hook/useInputFieldHook.js';
@@ -24,6 +26,8 @@ function App() {
     event.preventDefault();
     console.log(formData);
   };
+  const [value, setValue] = useState(123);
+  console.dir(setValue);
   return (
     <>
       <FormMain onChange={onChangeFormData}>
@@ -68,6 +72,7 @@ function App() {
           <SelectMain.Option value="3">3</SelectMain.Option>
         </SelectMain>
       </FormMain>
+      <CustomButton text="테스트" styleID="B" />
     </>
   );
 }
