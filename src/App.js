@@ -3,12 +3,13 @@ import CustomButton from './components/buttons/CustomButton.jsx';
 import FormMain from './components/input/FormMain';
 import SelectMain from './components/select/SelectMain.jsx';
 import { useInputFieldHook } from './utils/hook/useInputFieldHook.js';
+import Home from './Home.jsx';
 
 const initialState = {
   id: '',
   pw: '',
   checkbox1: true, //첫 랜더링시 체크상태로
-  radio1: null,
+  radio1: '라디오1',
 };
 // onChangeFormData (커스텀훅)을 FormMain 컴포넌트에 두려 했으나
 // 버튼 컴포넌트 때문에 안됨
@@ -21,28 +22,28 @@ const initialState = {
 // zustand 코드로 구현하면 로그인,회원가입 둘다 같이 상태공유가되므로
 // 안됨!
 function App() {
-  const { formData, onChangeFormData } = useInputFieldHook(initialState);
-  const onClick = (event) => {
-    event.preventDefault();
-    console.log(formData);
-  };
-  const [value, setValue] = useState(123);
-  console.dir(setValue);
+  const { formData, onChangeFormData, onClickFormData } = useInputFieldHook({
+    id: '초기값',
+    pw: '',
+    checkbox1: true, //첫 랜더링시 체크상태로
+    radio1: '라디오1',
+  });
+    
   return (
     <>
       <FormMain onChange={onChangeFormData}>
         <FormMain.Input
           name="id"
           placeholder="아이디를 입력해 주세요"
-          value={formData.id}
+          defaultValue={formData.id}
         />
-        <FormMain.Input
+        {/* <FormMain.Input
           type="password"
           name="pw"
           placeholder="비밀번호를 입력해 주세요"
           value={formData.pw}
-        />
-        <FormMain.Label htmlFor="checkbox1">체크박스1</FormMain.Label>
+        /> */}
+        {/* <FormMain.Label htmlFor="checkbox1">체크박스1</FormMain.Label>
         <FormMain.Checkbox
           name="checkbox1"
           id="checkbox1"
@@ -54,25 +55,20 @@ function App() {
         </>
         <>
           <FormMain.Label htmlFor="radio2">라디오2</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오2" id="radio2" />
+          <FormMain.Radio name="radio1" value="라디오2" id="radio2" checked />
         </>
         <>
           <FormMain.Label htmlFor="radio3">라디오3</FormMain.Label>
           <FormMain.Radio name="radio1" value="라디오3" id="radio3" />
-        </>
+        </> */}
         <FormMain.Button
           type="button"
           styleID="login"
           text="로그인"
-          onClick={onClick}
+          onClick={onClickFormData}
         />
-        <SelectMain name="select">
-          <SelectMain.Option value="1">1</SelectMain.Option>
-          <SelectMain.Option value="2">2</SelectMain.Option>
-          <SelectMain.Option value="3">3</SelectMain.Option>
-        </SelectMain>
       </FormMain>
-      <CustomButton text="테스트" styleID="B" />
+      <Home />
     </>
   );
 }

@@ -1,14 +1,3 @@
-var Person = function (name) {
-  this.name = name;
+var obj1 = {
+  a: 1,
 };
-
-Person.prototype.getName = function () {
-  return this.name;
-};
-
-var iu = new Person('지금');
-// iu.getName = function () {
-//   return `바로${this.name}`;
-// };
-
-console.log(iu.getName());

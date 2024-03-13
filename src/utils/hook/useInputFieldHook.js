@@ -8,16 +8,15 @@ export const useInputFieldHook = (initialState) => {
   const [formData, setFormData] = useState(initialState);
   const onChangeFormData = (event) => {
     const { name, value, checked, type } = event.target;
-    if (type === 'text' || type === 'password' || type === 'radio') {
-      //input[type="text"]
+    if (type === 'checkbox') {
       setFormData((prevState) => ({
         ...prevState,
-        [name]: value,
+        [name]: checked,
       }));
     } else {
       setFormData((prevState) => ({
         ...prevState,
-        [name]: checked,
+        [name]: value,
       }));
     }
   };
