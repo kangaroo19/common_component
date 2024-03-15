@@ -10,24 +10,10 @@ import styles from '../style/InputButtonCustom.module.css';
  * @returns
  */
 
-export default function InputButtonCustom({
-  type = 'button',
-  styleID,
-  onClick,
-  text,
-}) {
+export default function InputButtonCustom({ type = 'button', styleID, onClick, text }) {
   if (type !== 'button' && type !== 'submit') {
-    throw new Error(
-      `Invalid type '${type}' for InputButtonCustom. Type must be 'button' or 'submit'.`
-    );
+    throw new Error(`Invalid type '${type}' for InputButtonCustom. Type must be 'button' or 'submit'.`);
   }
 
-  return (
-    <input
-      type={type}
-      onClick={onClick}
-      className={`${divideStyleIDString(styles, styleID)}`}
-      value={text}
-    />
-  );
+  return <input type={type} onClick={onClick} className={`${divideStyleIDString(styles, styleID)}`} value={text} />;
 }

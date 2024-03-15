@@ -1,14 +1,15 @@
 import { useState } from 'react';
-import CustomButton from './components/buttons/CustomButton.jsx';
+import CustomButton from './components/buttons/CustomButton';
 import FormMain from './components/input/FormMain';
-import SelectMain from './components/select/SelectMain.jsx';
-import { useInputFieldHook } from './utils/hook/useInputFieldHook.js';
-import Home from './Home.jsx';
+import SelectMain from './components/select/SelectMain';
+import { useInputFieldHook } from './utils/hook/useInputFieldHook';
+import Home from './Home';
+import FormHook from './FormHook';
 
 const initialState = {
   id: '',
   pw: '',
-  checkbox1: true, //첫 랜더링시 체크상태로
+  checkbox1: true, // 첫 랜더링시 체크상태로
   radio1: '라디오1',
 };
 // onChangeFormData (커스텀훅)을 FormMain 컴포넌트에 두려 했으나
@@ -25,30 +26,18 @@ function App() {
   const { formData, onChangeFormData, onClickFormData } = useInputFieldHook({
     id: '초기값',
     pw: '',
-    checkbox1: true, //첫 랜더링시 체크상태로
+    checkbox1: true, // 첫 랜더링시 체크상태로
     radio1: '라디오1',
   });
-    
+
   return (
     <>
-      <FormMain onChange={onChangeFormData}>
-        <FormMain.Input
-          name="id"
-          placeholder="아이디를 입력해 주세요"
-          defaultValue={formData.id}
-        />
-        {/* <FormMain.Input
-          type="password"
-          name="pw"
-          placeholder="비밀번호를 입력해 주세요"
-          value={formData.pw}
-        /> */}
-        {/* <FormMain.Label htmlFor="checkbox1">체크박스1</FormMain.Label>
-        <FormMain.Checkbox
-          name="checkbox1"
-          id="checkbox1"
-          value={formData.checkbox1}
-        />
+      <FormHook />
+      {/* <FormMain onChange={onChangeFormData}>
+        <FormMain.Input name="id" placeholder="아이디를 입력해 주세요" defaultValue={formData.id} />
+        <FormMain.Input type="password" name="pw" placeholder="비밀번호를 입력해 주세요" value={formData.pw} />
+        <FormMain.Label htmlFor="checkbox1">체크박스1</FormMain.Label>
+        <FormMain.Checkbox name="checkbox1" id="checkbox1" checked />
         <>
           <FormMain.Label htmlFor="radio1">라디오1</FormMain.Label>
           <FormMain.Radio name="radio1" value="라디오1" id="radio1" />
@@ -60,15 +49,10 @@ function App() {
         <>
           <FormMain.Label htmlFor="radio3">라디오3</FormMain.Label>
           <FormMain.Radio name="radio1" value="라디오3" id="radio3" />
-        </> */}
-        <FormMain.Button
-          type="button"
-          styleID="login"
-          text="로그인"
-          onClick={onClickFormData}
-        />
-      </FormMain>
-      <Home />
+        </>
+        <FormMain.Button type="button" styleID="login" text="로그인" onClick={onClickFormData} />
+      </FormMain> */}
+      {/* <Home /> */}
     </>
   );
 }

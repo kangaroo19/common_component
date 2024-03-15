@@ -8,11 +8,7 @@ import LabelCustom from './component/LabelCustom';
 
 export default function FormMain({ children, styleID, onChange }) {
   return (
-    <form
-      onChange={onChange}
-      action=""
-      className={`${divideStyleIDString(styles, styleID)}`}
-    >
+    <form onChange={onChange} className={`${divideStyleIDString(styles, styleID)}`}>
       {children}
     </form>
   );
