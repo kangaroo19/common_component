@@ -5,14 +5,7 @@ import OptionCustom from './component/OptionCustom';
 
 const selectContext = createContext({});
 
-export default function SelectMain({
-  children,
-  styleID,
-  onChange,
-  disabled,
-  id,
-  name,
-}) {
+export default function SelectMain({ children, styleID, onChange, disabled, id, name }) {
   const onChangeOption = (event) => {
     console.log(event.target.value);
   };

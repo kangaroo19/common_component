@@ -2,7 +2,7 @@ import { useState } from 'react';
 import CustomButton from './components/buttons/CustomButton';
 import FormMain from './components/input/FormMain';
 import SelectMain from './components/select/SelectMain';
-import { useInputFieldHook } from './utils/hook/useInputFieldHook';
+import useInputFieldHook from './utils/hook/useInputFieldHook';
 import Home from './Home';
 import FormHook from './FormHook';
 

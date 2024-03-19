@@ -1,3 +1,5 @@
+/* eslint-disable react/button-has-type */
+
 import divideStyleIDString from '../../utils/divideStyleIDString';
 import styles from './CustomButton.module.scss';
 /**
@@ -7,21 +9,9 @@ import styles from './CustomButton.module.scss';
  * @param {string} styleID 클래스이름 선택자,두개 이상일 경우 공백으로 구분
  * @returns
  */
-console.log(styles);
-export default function CustomButton({
-  text,
-  styleID = '',
-  onClick,
-  disabled = false,
-  type = 'button',
-}) {
+export default function CustomButton({ text, styleID = '', onClick, disabled = false, type = 'button' }) {
   return (
-    <button
-      disabled={disabled}
-      type={type}
-      className={`${divideStyleIDString(styles, styleID)}`}
-      onClick={onClick}
-    >
+    <button disabled={disabled} type={type} className={`${divideStyleIDString(styles, styleID)}`} onClick={onClick}>
       {text}
     </button>
   );

@@ -11,7 +11,16 @@ import styles from '../style/InputCustom.module.css';
 // 원래는 type 도 프롭으로 줘서 버튼,인풋 둘다 사용가능하게 하려했는데
 // 버튼 같은 경우 onChange가 안달리고
 // 인풋 같은 경우에는 onClick이 안달리므로 타입 기준으로 컴포넌트 나눔
-export default function InputFieldCustom({ type = 'text', id, styleID, name, placeholder, defaultValue, registerFn }) {
+export default function InputFieldCustom({
+  type = 'text',
+  id,
+  styleID,
+  name,
+  placeholder,
+  defaultValue,
+  registerFn,
+  readOnly,
+}) {
   if (type !== 'text' && type !== 'password') {
     throw new Error(`Invalid type '${type}' for InputButtonCustom. Type must be 'text' or 'password'.`);
   }
@@ -21,9 +30,11 @@ export default function InputFieldCustom({ type = 'text', id, styleID, name, pla
       type={type}
       name={name}
       {...registerFn}
-      defaultValue={defaultValue}
       placeholder={placeholder}
+      readOnly={readOnly}
       className={`${divideStyleIDString(styles, styleID)}`}
+      aria-label={`inputTEXT_${id}`}
+      aria-labelledby={id}
     />
   );
 }
