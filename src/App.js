@@ -5,6 +5,7 @@ import SelectMain from './components/select/SelectMain';
 import useInputFieldHook from './utils/hook/useInputFieldHook';
 import Home from './Home';
 import FormHook from './FormHook';
+import { FormProvider, useForm } from 'react-hook-form';
 
 const initialState = {
   id: '',
@@ -23,37 +24,18 @@ const initialState = {
 // zustand 코드로 구현하면 로그인,회원가입 둘다 같이 상태공유가되므로
 // 안됨!
 function App() {
-  const { formData, onChangeFormData, onClickFormData } = useInputFieldHook({
-    id: '초기값',
-    pw: '',
-    checkbox1: true, // 첫 랜더링시 체크상태로
-    radio1: '라디오1',
+  const method = useForm({
+    defaultValues: { username: '주니어네키' },
   });
-
+  const { handleSubmit } = method;
+  const onClickLoginBtn = (data) => {
+    console.log(data);
+  };
   return (
-    <>
+    <FormProvider {...method}>
       <FormHook />
-      {/* <FormMain onChange={onChangeFormData}>
-        <FormMain.Input name="id" placeholder="아이디를 입력해 주세요" defaultValue={formData.id} />
-        <FormMain.Input type="password" name="pw" placeholder="비밀번호를 입력해 주세요" value={formData.pw} />
-        <FormMain.Label htmlFor="checkbox1">체크박스1</FormMain.Label>
-        <FormMain.Checkbox name="checkbox1" id="checkbox1" checked />
-        <>
-          <FormMain.Label htmlFor="radio1">라디오1</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오1" id="radio1" />
-        </>
-        <>
-          <FormMain.Label htmlFor="radio2">라디오2</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오2" id="radio2" checked />
-        </>
-        <>
-          <FormMain.Label htmlFor="radio3">라디오3</FormMain.Label>
-          <FormMain.Radio name="radio1" value="라디오3" id="radio3" />
-        </>
-        <FormMain.Button type="button" styleID="login" text="로그인" onClick={onClickFormData} />
-      </FormMain> */}
-      {/* <Home /> */}
-    </>
+      <CustomButton text="테스트!!" onClick={handleSubmit(onClickLoginBtn)} />
+    </FormProvider>
   );
 }
 

@@ -1,27 +1,12 @@
 import { useState } from 'react';
+import CustomButton from './components/buttons/CustomButton';
+import { useFormContext } from 'react-hook-form';
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    id2: 'ddddddd',
-    pw2: '',
-  });
-  const onChange = (event) => {
-    const {
-      target: { value, name },
-    } = event;
-    setFormData({ ...formData, [name]: value });
+  const { handleSubmit } = useFormContext();
+  const onClickLoginBtn = (data) => {
+    console.log(data);
   };
-  const onClick = (event) => {
-    event.preventDefault();
-    console.log(formData);
-  };
-  return (
-    <form action="" onChange={onChange}>
-      <input type="text" name="id2" value={formData.id2} />
-      <input type="text" name="pw2" />
-      <button type="button" onClick={onClick}>
-        체크!
-      </button>
-    </form>
-  );
+
+  return <CustomButton text="테스트!!!!!" onClick={handleSubmit(onClickLoginBtn)} />;
 }

@@ -5,12 +5,19 @@ import InputFieldCustom from './component/InputFieldCustom';
 import CheckboxCustom from './component/CheckboxCustom';
 import RadioButton from './component/RadioButton';
 import LabelCustom from './component/LabelCustom';
+import { Form } from 'react-hook-form';
 
-export default function FormMain({ children, styleID, onChange }) {
+export default function FormMain({ children, styleID, onSubmit, onError, onSuccess, method, control }) {
   return (
-    <form onChange={onChange} className={`${divideStyleIDString(styles, styleID)}`}>
+    <Form
+      control={control}
+      onSubmit={onSubmit}
+      onError={onError}
+      onSuccess={onSuccess}
+      className={`${divideStyleIDString(styles, styleID)}`}
+    >
       {children}
-    </form>
+    </Form>
   );
 }
 
