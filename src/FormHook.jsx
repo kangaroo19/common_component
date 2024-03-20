@@ -1,15 +1,14 @@
 import { useForm, useFormContext } from 'react-hook-form';
 import FormMain from './components/input/FormMain';
+import { useMonsterDataQuery } from './utils/query/monsterQuery';
 
 export default function FormHook() {
   const { register, handleSubmit, reset } = useFormContext();
   const onClickLoginBtn = (data) => {
     console.log(data);
   };
-  // console.log(register)
-  const onError = () => {
-    alert('느금');
-  };
+  const { isLoading, data, isError, error, refetch } = useMonsterDataQuery();
+  console.log(data);
   return (
     <FormMain onSubmit={handleSubmit(onClickLoginBtn)}>
       <FormMain.Label htmlFor="username">아이디</FormMain.Label>

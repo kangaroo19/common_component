@@ -1,0 +1,19 @@
+{
+  "monster": [
+    {
+      "id": 1,
+      "name": "bitchass",
+      "alterego": "Bruce Wayne"
+    },
+    {
+      "id": 2,
+      "name": "Superman",
+      "alterego": "Clark Kent"
+    },
+    {
+      "id": 3,
+      "name": "Wonder Woman 2221",
+      "alterego": "Princess Diana"
+    }
+  ]
+}

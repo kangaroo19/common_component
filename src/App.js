@@ -1,28 +1,10 @@
-import { useState } from 'react';
 import CustomButton from './components/buttons/CustomButton';
-import FormMain from './components/input/FormMain';
-import SelectMain from './components/select/SelectMain';
-import useInputFieldHook from './utils/hook/useInputFieldHook';
-import Home from './Home';
 import FormHook from './FormHook';
 import { FormProvider, useForm } from 'react-hook-form';
+import { useMonsterDataQuery } from './utils/query/monsterQuery';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-const initialState = {
-  id: '',
-  pw: '',
-  checkbox1: true, // 첫 랜더링시 체크상태로
-  radio1: '라디오1',
-};
-// onChangeFormData (커스텀훅)을 FormMain 컴포넌트에 두려 했으나
-// 버튼 컴포넌트 때문에 안됨
-
-// 결론적으로 커스텀훅은 컴포넌트별로 생성되는데
-// 같은 상태 공유가 안됨
-// 그렇다고 zustand를 써도 안됨
-// 예를 들어 로그인 컴포넌트가 있고
-// 회원가입 컴포넌트가 있다고 가정하고
-// zustand 코드로 구현하면 로그인,회원가입 둘다 같이 상태공유가되므로
-// 안됨!
+const queryClient = new QueryClient();
 function App() {
   const method = useForm({
     defaultValues: { username: '주니어네키' },
@@ -32,10 +14,12 @@ function App() {
     console.log(data);
   };
   return (
-    <FormProvider {...method}>
-      <FormHook />
-      <CustomButton text="테스트!!" onClick={handleSubmit(onClickLoginBtn)} />
-    </FormProvider>
+    <QueryClientProvider client={queryClient}>
+      <FormProvider {...method}>
+        <FormHook />
+        <CustomButton text="테스트!!" onClick={handleSubmit(onClickLoginBtn)} />
+      </FormProvider>
+    </QueryClientProvider>
   );
 }
 
