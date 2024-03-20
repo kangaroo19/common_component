@@ -1,19 +1,53 @@
 {
   "monster": [
     {
-      "id": 1,
-      "name": "bitchass",
-      "alterego": "Bruce Wayne"
+      "id": "1",
+      "name": "주황버섯",
+      "level": "Bruce Wayne"
     },
     {
-      "id": 2,
-      "name": "Superman",
-      "alterego": "Clark Kent"
+      "id": "2",
+      "name": "파란버섯",
+      "level": "Clark Kent"
     },
     {
-      "id": 3,
-      "name": "Wonder Woman 2221",
-      "alterego": "Princess Diana"
+      "id": "3",
+      "name": "초록버섯",
+      "level": "Princess Diana"
+    },
+    {
+      "id": "57de",
+      "username": "주니어네키",
+      "password": "123"
+    },
+    {
+      "id": "6cbe",
+      "username": "주니어네키",
+      "password": "123"
+    },
+    {
+      "id": "a61b",
+      "username": "주니어네키",
+      "name": "주니어네키",
+      "level": "23"
+    },
+    {
+      "id": "b1eb",
+      "username": "주니어네키",
+      "name": "ㅇㅇㅇ",
+      "level": "ㅇㅇㅇㅇ"
+    },
+    {
+      "id": "180c",
+      "username": "주니어네키",
+      "name": "ㅋㅋㅋ",
+      "level": "ㅋㅋㅋ"
+    },
+    {
+      "id": "16a7",
+      "username": "주니어네키",
+      "name": "ㅇㄹ",
+      "level": "ㅁㄴㅇㄹㄴㅇ"
     }
   ]
 }

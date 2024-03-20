@@ -1,23 +1,22 @@
 import CustomButton from './components/buttons/CustomButton';
 import FormHook from './FormHook';
 import { FormProvider, useForm } from 'react-hook-form';
-import { useMonsterDataQuery } from './utils/query/monsterQuery';
+import { useMonsterMutation } from './utils/query/monsterQuery';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Home from './Home';
+import MonsterList from './MonsterList';
 
 const queryClient = new QueryClient();
 function App() {
   const method = useForm({
     defaultValues: { username: '주니어네키' },
   });
-  const { handleSubmit } = method;
-  const onClickLoginBtn = (data) => {
-    console.log(data);
-  };
+
   return (
     <QueryClientProvider client={queryClient}>
       <FormProvider {...method}>
         <FormHook />
-        <CustomButton text="테스트!!" onClick={handleSubmit(onClickLoginBtn)} />
+        <MonsterList />
       </FormProvider>
     </QueryClientProvider>
   );
