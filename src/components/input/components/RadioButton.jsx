@@ -1,5 +1,5 @@
 import divideStyleIDString from '../../../utils/divideStyleIDString';
-import styles from '../style/RadioButton.module.css';
+import styles from '../styles/RadioButton.module.css';
 
 export default function RadioButton({ styleID, registerFn, name, id, value, checked }) {
   return (

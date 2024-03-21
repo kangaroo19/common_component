@@ -1,10 +1,10 @@
 import divideStyleIDString from '../../utils/divideStyleIDString';
 import styles from './FormMain.module.css';
-import InputButtonCustom from './component/InputButtonCustom';
-import InputFieldCustom from './component/InputFieldCustom';
-import CheckboxCustom from './component/CheckboxCustom';
-import RadioButton from './component/RadioButton';
-import LabelCustom from './component/LabelCustom';
+import InputButtonCustom from './components/InputButtonCustom';
+import InputFieldCustom from './components/InputFieldCustom';
+import CheckboxCustom from './components/CheckboxCustom';
+import RadioButton from './components/RadioButton';
+import LabelCustom from './components/LabelCustom';
 import { Form } from 'react-hook-form';
 
 export default function FormMain({ children, styleID, onSubmit, onError, onSuccess, method, control }) {

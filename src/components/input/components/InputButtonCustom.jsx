@@ -1,5 +1,5 @@
 import divideStyleIDString from '../../../utils/divideStyleIDString';
-import styles from '../style/InputButtonCustom.module.css';
+import styles from '../styles/InputButtonCustom.module.css';
 
 /**
  *

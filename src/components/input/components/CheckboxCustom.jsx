@@ -1,5 +1,5 @@
 import divideStyleIDString from '../../../utils/divideStyleIDString';
-import styles from '../style/CheckboxCustom.module.css';
+import styles from '../styles/CheckboxCustom.module.css';
 
 export default function CheckboxCustom({ styleID, checked, registerFn, name, id }) {
   return (
