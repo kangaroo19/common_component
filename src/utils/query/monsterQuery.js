@@ -6,12 +6,12 @@ const fetchMonster = () => {
 };
 
 const addMonster = (monster) => {
-  return axios.post('http://localhost:4000/monster', monster);
+  return axios.post('http://localhost:4000/mdonster', monster);
 };
 
 export const useMonsterDataQuery = () => {
   return useQuery({
-    queryKey: ['superHeroes11'],
+    queryKey: ['monster'],
     queryFn: fetchMonster,
   });
 };
