@@ -1,95 +1,59 @@
 {
   "monster": [
     {
-      "id": "1",
-      "name": "주황버섯",
-      "level": "Bruce Wayne"
+      "id": "23ba",
+      "monsterName": "주니어네키",
+      "level": "ddd"
     },
     {
-      "id": "2",
-      "name": "파란버섯",
-      "level": "Clark Kent"
+      "id": "c74a",
+      "monsterName": "주니어네키",
+      "level": "zzz"
     },
     {
-      "id": "3",
-      "name": "초록버섯",
-      "level": "Princess Diana"
+      "id": "8ec9",
+      "monsterName": "ㅇ",
+      "level": "ㅇ"
     },
     {
-      "id": "57de",
-      "username": "주니어네키",
-      "password": "123"
+      "id": "afaf",
+      "monsterName": "123",
+      "level": "123",
+      "newMonster": {
+        "id": "c74a",
+        "monsterName": "주니어네키",
+        "level": "zzz"
+      }
     },
     {
-      "id": "6cbe",
-      "username": "주니어네키",
-      "password": "123"
+      "id": "63cd",
+      "monsterName": "ㅇㄹ",
+      "level": "ㅇㄹ",
+      "newMonster": {
+        "id": "23ba",
+        "monsterName": "주니어네키",
+        "level": "ddd"
+      }
     },
     {
-      "id": "a61b",
-      "username": "주니어네키",
-      "name": "주니어네키",
-      "level": "23"
+      "id": "588f",
+      "monsterName": "123",
+      "level": "123",
+      "newMonster": {
+        "id": "23ba",
+        "monsterName": "주니어네키",
+        "level": "ddd"
+      }
     },
     {
-      "id": "b1eb",
-      "username": "주니어네키",
-      "name": "ㅇㅇㅇ",
-      "level": "ㅇㅇㅇㅇ"
-    },
-    {
-      "id": "180c",
-      "username": "주니어네키",
-      "name": "ㅋㅋㅋ",
-      "level": "ㅋㅋㅋ"
-    },
-    {
-      "id": "16a7",
-      "username": "주니어네키",
-      "name": "ㅇㄹ",
-      "level": "ㅁㄴㅇㄹㄴㅇ"
-    },
-    {
-      "id": "fda0",
-      "username": "주니어네키",
-      "name": "ㅇㄹ",
-      "level": "ㅁㄴㅇㄹㄴㅇ"
-    },
-    {
-      "id": "96af",
-      "username": "주니어네키",
-      "name": "dfdsafd",
-      "level": "sdfasdf"
-    },
-    {
-      "id": "cbcb",
-      "username": "주니어네키",
-      "name": "dd",
-      "level": "dd"
-    },
-    {
-      "id": "6de2",
-      "username": "주니어네키",
-      "name": "ㅇㅇㅇ",
-      "level": "ㅇㅇㅇ"
-    },
-    {
-      "id": "1df2",
-      "username": "주니어네키",
-      "name": "ㅇㄹㅇㄹ",
-      "level": "ㅇㄹㅇㄹ"
-    },
-    {
-      "id": "40de",
-      "username": "주니어네키",
-      "name": "ㅇㅇ",
-      "level": "ㅁㄴㅇㄹ"
-    },
-    {
-      "id": "d86b",
-      "username": "주니어네키",
-      "name": "ㅁㄴㅇㄹ",
-      "level": "ㄴㅇㅁㄹ"
+      "id": "1dac",
+      "monsterName": "234",
+      "level": "123",
+      "newMonster": {
+        "id": "23ba",
+        "monsterName": "주니어네키",
+        "level": "ddd"
+      }
     }
   ]
 }

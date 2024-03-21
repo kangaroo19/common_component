@@ -12,7 +12,7 @@ export default function FormMain({ children, styleID, onSubmit, onError, onSucce
     <Form
       control={control}
       onSubmit={onSubmit}
-      method="post"
+      method={method}
       action="/api"
       onError={onError}
       onSuccess={onSuccess}

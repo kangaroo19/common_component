@@ -1,10 +1,10 @@
 import CustomButton from './components/buttons/CustomButton';
 import { useFormContext } from 'react-hook-form';
-import { useMonsterMutation } from './utils/query/monsterQuery';
+import { useMonsterMutationPost } from './utils/query/monsterQuery';
 
 export default function Home() {
   const { handleSubmit } = useFormContext();
-  const { mutate } = useMonsterMutation();
+  const { mutate } = useMonsterMutationPost();
   const onClickAddMonster = (data) => {
     const { name, level } = data;
     if (name === '' || level === '') return;
