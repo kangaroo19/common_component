@@ -25,14 +25,7 @@ function App() {
     event.preventDefault();
     console.log(formData);
   };
-  return (
-    <>
-      {/* <FormA />
-      <FormB />
-      <CustomButton text="확인" onClick={onClick} /> */}
-      <FormC />
-    </>
-  );
+  return <div>dd</div>;
 }
 
 export default App;
