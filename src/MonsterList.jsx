@@ -1,11 +1,13 @@
 import { useFormContext } from 'react-hook-form';
 import CustomButton from './components/buttons/CustomButton';
-import { useMonsterDataQuery, useMonsterMutationDelete, useMonsterMutationPost } from './utils/query/monsterQuery';
+import { useMonsterDataQuery, useMonsterMutationDelete } from './utils/query/monsterQuery';
+import { useToggleUpdateBtn } from './utils/zustand/useToggleUpdateBtn';
 
 export default function MonsterList() {
   const { data, isLoading, refetch, isError } = useMonsterDataQuery();
-  const { setValue, getValues } = useFormContext();
+  const { setValue } = useFormContext();
   const { mutate } = useMonsterMutationDelete(refetch);
+  const { setIsUpdateTrue } = useToggleUpdateBtn();
   if (isLoading) {
     return <div>불러오는중</div>;
   }
@@ -14,11 +16,18 @@ export default function MonsterList() {
   }
 
   const onClickDeleteMonster = (monsterId) => {
-    mutate(monsterId);
+    mutate([monsterId]);
   };
   const onClickUpdateMonster = (monster) => {
-    setValue('newMonster', monster);
-    console.log(getValues('newMonster'));
+    setValue('monsterName', monster.monsterName);
+    setValue('level', monster.level);
+    setValue('id', monster.id);
+    // setValue 두번하는거 말고 한번에 하는 방법 생각하기
+    setIsUpdateTrue();
+  };
+  const onClickAllDeleteBtn = () => {
+    const monsterIdArr = data.data.map((item) => item.id);
+    mutate(monsterIdArr);
   };
   return (
     <>
@@ -36,7 +45,7 @@ export default function MonsterList() {
           );
         })}
       </ul>
-      <CustomButton text="새로고침" onClick={() => refetch()} />
+      <CustomButton text="전체삭제" onClick={onClickAllDeleteBtn} />
     </>
   );
 }

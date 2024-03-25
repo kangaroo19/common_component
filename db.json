@@ -1,59 +1,24 @@
 {
   "monster": [
     {
-      "id": "23ba",
-      "monsterName": "주니어네키",
-      "level": "ddd"
+      "id": "a28b",
+      "monsterName": "1",
+      "level": "2"
     },
     {
-      "id": "c74a",
-      "monsterName": "주니어네키",
-      "level": "zzz"
+      "id": "0d9a",
+      "monsterName": "1",
+      "level": "1"
     },
     {
-      "id": "8ec9",
-      "monsterName": "ㅇ",
-      "level": "ㅇ"
-    },
-    {
-      "id": "afaf",
+      "id": "576f",
       "monsterName": "123",
-      "level": "123",
-      "newMonster": {
-        "id": "c74a",
-        "monsterName": "주니어네키",
-        "level": "zzz"
-      }
+      "level": "123"
     },
     {
-      "id": "63cd",
-      "monsterName": "ㅇㄹ",
-      "level": "ㅇㄹ",
-      "newMonster": {
-        "id": "23ba",
-        "monsterName": "주니어네키",
-        "level": "ddd"
-      }
-    },
-    {
-      "id": "588f",
+      "id": "558c",
       "monsterName": "123",
-      "level": "123",
-      "newMonster": {
-        "id": "23ba",
-        "monsterName": "주니어네키",
-        "level": "ddd"
-      }
-    },
-    {
-      "id": "1dac",
-      "monsterName": "234",
-      "level": "123",
-      "newMonster": {
-        "id": "23ba",
-        "monsterName": "주니어네키",
-        "level": "ddd"
-      }
+      "level": "123"
     }
   ]
 }

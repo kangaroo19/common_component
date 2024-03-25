@@ -4,10 +4,9 @@ import MonsterList from './MonsterList';
 import MonsterForm from './MonsterForm';
 
 const queryClient = new QueryClient();
+
 function App() {
-  const method = useForm({
-    // defaultValues: { monsterName: '주니어네키' },
-  });
+  const method = useForm();
 
   return (
     <QueryClientProvider client={queryClient}>
