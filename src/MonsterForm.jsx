@@ -6,7 +6,7 @@ import { useMonsterDataQuery, useMonsterMutationPost, useMonsterMutationUpdate }
 import { useToggleUpdateBtn } from './utils/zustand/useToggleUpdateBtn';
 
 export default function MonsterForm() {
-  const { register, handleSubmit, reset, getValues, setValue } = useFormContext();
+  const { register, handleSubmit, reset} = useFormContext();
   const { isUpdate, setIsUpdateFalse } = useToggleUpdateBtn();
   const { refetch } = useMonsterDataQuery();
 

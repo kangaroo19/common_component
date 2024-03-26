@@ -1,24 +1,9 @@
 {
   "monster": [
     {
-      "id": "a28b",
-      "monsterName": "1",
-      "level": "2"
-    },
-    {
-      "id": "0d9a",
-      "monsterName": "1",
-      "level": "1"
-    },
-    {
-      "id": "576f",
-      "monsterName": "123",
-      "level": "123"
-    },
-    {
-      "id": "558c",
-      "monsterName": "123",
-      "level": "123"
+      "id": "abce",
+      "monsterName": "주황버섯",
+      "level": "8"
     }
   ]
 }

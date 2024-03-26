@@ -34,7 +34,7 @@ export const useMonsterMutationPost = (reset, refetch) => {
     onSuccess: () => {
       reset();
       refetch();
-      alert('등록1 성공!!!!');
+      alert('등록 성공!!!!');
     },
     onError: (error) => {
       alert(`${error.response.status} ${error.response.data}`);

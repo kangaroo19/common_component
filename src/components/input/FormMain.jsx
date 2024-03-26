@@ -13,7 +13,6 @@ export default function FormMain({ children, styleID, onSubmit, onError, onSucce
       control={control}
       onSubmit={onSubmit}
       method={method}
-      action="/api"
       onError={onError}
       onSuccess={onSuccess}
       className={`${divideStyleIDString(styles, styleID)}`}

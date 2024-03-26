@@ -15,16 +15,17 @@ export default function MonsterList() {
     return <div>불러오지 못했습니다.</div>;
   }
 
-  const onClickDeleteMonster = (monsterId) => {
-    mutate([monsterId]);
-  };
   const onClickUpdateMonster = (monster) => {
     setValue('monsterName', monster.monsterName);
     setValue('level', monster.level);
     setValue('id', monster.id);
-    // setValue 두번하는거 말고 한번에 하는 방법 생각하기
     setIsUpdateTrue();
   };
+  // 단건 삭제
+  const onClickDeleteMonster = (monsterId) => {
+    mutate([monsterId]);
+  };
+  // 전체삭제
   const onClickAllDeleteBtn = () => {
     const monsterIdArr = data.data.map((item) => item.id);
     mutate(monsterIdArr);
