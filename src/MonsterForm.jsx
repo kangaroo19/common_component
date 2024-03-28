@@ -53,10 +53,18 @@ export default function MonsterForm() {
       </Grid>
       <Grid container spacing={4} justifyContent="center" p={1}>
         <Grid item>
-          <FormMain.Button text={isUpdateObj.isUpdateText} type="submit" styleID="button_monsterAdd" />
+          <FormMain.Button
+            text={isUpdateObj.isUpdateText}
+            type="submit"
+            styleID="button_monsterAdd monsterForm_commonBtn"
+          />
         </Grid>
         <Grid item>
-          <FormMain.Button text="초기화" onClick={onClickResetBtn} styleID="button_monsterReset" />
+          <FormMain.Button
+            text="초기화"
+            onClick={onClickResetBtn}
+            styleID="button_monsterReset monsterForm_commonBtn"
+          />
         </Grid>
       </Grid>
     </FormMain>

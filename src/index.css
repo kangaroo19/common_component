@@ -6,7 +6,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./asset/images/wallpaper.jpeg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   font-family: 'gtr-Bold';
 }
 

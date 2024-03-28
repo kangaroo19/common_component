@@ -2,6 +2,9 @@ import { useFormContext } from 'react-hook-form';
 import CustomButton from './components/buttons/CustomButton';
 import { useMonsterDataQuery, useMonsterMutationDelete } from './utils/query/monsterQuery';
 import { useToggleUpdateBtn } from './utils/zustand/useToggleUpdateBtn';
+import styled from 'styled-components';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function MonsterList() {
   const { data, isLoading, refetch, isError } = useMonsterDataQuery();
@@ -32,23 +35,57 @@ export default function MonsterList() {
   };
   return (
     <>
-      <ul>
-        {data?.data.map((item) => {
-          return (
-            <li key={item.id}>
-              <span>{`${item.monsterName} Lv.${item.level}`}</span>
-              <span>
-                <CustomButton text="update" onClick={() => onClickUpdateMonster(item)} />
-                <CustomButton text="delete" onClick={() => onClickDeleteMonster(item.id)} />
-              </span>
-            </li>
-          );
-        })}
-      </ul>
-      <CustomButton text="전체삭제" onClick={onClickAllDeleteBtn} />
+      {data.data.length > 0 && (
+        <MonsterListWrapper>
+          {data?.data.map((item) => {
+            return (
+              <MonsterListItem key={item.id}>
+                <span>{`${item.monsterName} Lv.${item.level}`}</span>
+                <IconWrapper>
+                  <CustomButton
+                    text={<BorderColorIcon sx={{ width: '20px' }} />}
+                    onClick={() => onClickUpdateMonster(item)}
+                    styleID="button_update monsterList_commonBtn"
+                  />
+                  <CustomButton
+                    text={<DeleteIcon sx={{ width: '20px' }} />}
+                    onClick={() => onClickDeleteMonster(item.id)}
+                    styleID="button_delete monsterList_commonBtn"
+                  />
+                </IconWrapper>
+              </MonsterListItem>
+            );
+          })}
+        </MonsterListWrapper>
+      )}
+      <CustomButton text="전체삭제" onClick={onClickAllDeleteBtn} styleID="button_deleteAll" />
     </>
   );
 }
+
+const MonsterListWrapper = styled.ul`
+  margin: 10px auto;
+  width: 60%;
+  background: rgba(0, 0, 0, 0.45); /* 투명도 조절 */
+  backdrop-filter: blur(30px); /* 배경 블러 효과 */
+  border-radius: 10px; /* 모서리 둥글게 */
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* 그림자 효과 */
+  border: 1px solid rgba(0, 0, 0, 0.18); /* 테두리 선 */
+  list-style: none;
+  padding: 10px 5px;
+`;
+
+const MonsterListItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin: 10px 0;
+`;
+
+const IconWrapper = styled.span`
+  display: flex;
+`;
 
 // 이렇게 새로고침 버튼을 만들어 데이터 패칭을 해도 되지만..별로임
 // mutation함수에 콜백함수를 넣어 따로 데이터 패칭 가능

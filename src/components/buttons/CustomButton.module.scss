@@ -1,4 +1,36 @@
 @import 'A';
 @import 'B';
 
+.monsterList_commonBtn {
+  width: 30px;
+  height: 30px;
+  margin: 0 3px;
+  background-color: #e1e1e1;
+  border-radius: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 
+.button_update {
+  border: 3px solid black;
+}
+.button_delete {
+  border: 3px solid red;
+}
+
+.button_deleteAll {
+  border: none;
+  border-radius: 15px;
+  width: 150px;
+  padding: 5px;
+  font-family: 'gtr-Bold';
+  cursor: pointer;
+}
+@font-face {
+  font-family: 'gtr-Bold';
+  font-weight: normal;
+  src: url('../../asset/fonts/gtr_Bold.ttf') format('truetype');
+}
