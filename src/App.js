@@ -4,6 +4,8 @@ import MonsterList from './MonsterList';
 import MonsterForm from './MonsterForm';
 import styled from 'styled-components';
 import Layout from './components/layout/Layout';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const queryClient = new QueryClient();
 
@@ -13,6 +15,17 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <FormProvider {...method}>
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          theme="dark"
+        />
         <Layout styleID="monsterLayout glass-container">
           <Header>몬스터 도감</Header>
           <MonsterForm />

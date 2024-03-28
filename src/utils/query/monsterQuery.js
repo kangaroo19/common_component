@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useQuery, useMutation } from '@tanstack/react-query';
+import { toast } from 'react-toastify';
 
 const fetchMonster = () => {
   return axios.get('http://localhost:4000/monster');
@@ -10,7 +11,7 @@ const addMonster = (monster) => {
 };
 // 전체삭제 때문에 병렬처리하는 함수 하나 더 만드려 했으나
 // 기본 베이스는 병렬처리로 하고 단건삭제시에도 인자를
-// 길이가 1인 배열로 받기로 했음
+// 길이가 1인 배열로 받기로 했  음
 const deleteMonster = (monsterIdArr) => {
   const deleteRequests = monsterIdArr.map((monsterId) => {
     return axios.delete(`http://localhost:4000/monster/${monsterId}`);
@@ -32,12 +33,12 @@ export const useMonsterMutationPost = (reset, refetch) => {
   return useMutation({
     mutationFn: addMonster,
     onSuccess: () => {
+      toast.success('등록 성공');
       reset();
       refetch();
-      alert('등록 성공!!!!');
     },
     onError: (error) => {
-      alert(`${error.response.status} ${error.response.data}`);
+      toast.error(`${error.response.status} ${error.response.data}`);
     },
   });
 };
@@ -46,11 +47,11 @@ export const useMonsterMutationDelete = (refetch) => {
   return useMutation({
     mutationFn: deleteMonster,
     onSuccess: () => {
-      alert('삭제 성공!!!!');
+      toast.success('삭제 성공!!!!');
       refetch();
     },
     onError: (error) => {
-      alert(`${error.response.status} ${error.response.data}`);
+      toast.error(`${error.response.status} ${error.response.data}`);
     },
   });
 };
@@ -59,13 +60,13 @@ export const useMonsterMutationUpdate = (reset, refetch, setIsUpdateFalse) => {
   return useMutation({
     mutationFn: updateMonster,
     onSuccess: () => {
-      alert('수정 성공!!!!');
+      toast.success('수정 성공');
       refetch();
       reset();
       setIsUpdateFalse();
     },
     onError: (error) => {
-      alert(`${error.response.status} ${error.response.data}`);
+      toast.error(`${error.response.status} ${error.response.data}`);
     },
   });
 };

@@ -1,9 +1,3 @@
 {
-  "monster": [
-    {
-      "id": "d210",
-      "monsterName": "주황버섯",
-      "level": "8"
-    }
-  ]
+  "monster": []
 }
