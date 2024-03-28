@@ -7,11 +7,11 @@
 ![davaid (1)](https://github.com/kangaroo19/common_component/assets/86513078/06ddcc63-fddc-44d9-9af4-47b6b41fd8fc)
 ~~뭔가 이런느낌..?~~
 - **react-query** : 효과적인 서버 상태 관리 위해서 사용, 각 요청 성공 여부에 따른 메시지도 이것으로 처리하였다.
-- __json-server__ : react-query 사용 중 이므로 임의로 비동기 요청으로 목업데이터 사용하기 위해 사용
+- __json-server__ : 비동기 요청으로 목업데이터 사용하기 위해 사용
 - __react-hook-form__ : input,button 같은 태그를 재사용하기 위해 공통 컴포넌트를 만들었는데 (그래서 레포 이름도..ㅋㅋ) <br>
 input 태그 같은 경우 react-hook-form 을 사용하면 이를 효과적으로 구현 할 수 있고 input필드의 상태값도 좀 더 편하게 사용 가능하여서 사용하였다
 - __zustand__ : 이것 까진 사용 할 생각은 없었는데 클라이언트 관련 상태는 zustand로 하는게 더 좋지 않을까 싶어서 사용하였다, update 관련 기능에서만 사용된다
--__mui__ : 아이콘과 레이아웃 작업에 사용하였다
+- __mui__ : 아이콘과 레이아웃 작업에 사용하였다
 
 ## 공통 컴포넌트
 
