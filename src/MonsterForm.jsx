@@ -4,9 +4,10 @@ import { useFormContext } from 'react-hook-form';
 import FormMain from './components/input/FormMain';
 import { useMonsterDataQuery, useMonsterMutationPost, useMonsterMutationUpdate } from './utils/query/monsterQuery';
 import { useToggleUpdateBtn } from './utils/zustand/useToggleUpdateBtn';
+import { Grid } from '@mui/material';
 
 export default function MonsterForm() {
-  const { register, handleSubmit, reset} = useFormContext();
+  const { register, handleSubmit, reset } = useFormContext();
   const { isUpdate, setIsUpdateFalse } = useToggleUpdateBtn();
   const { refetch } = useMonsterDataQuery();
 
@@ -33,12 +34,31 @@ export default function MonsterForm() {
 
   return (
     <FormMain onSubmit={handleSubmit(handleFormButton)}>
-      <FormMain.Label htmlFor="monsterName">몬스터 이름</FormMain.Label>
-      <FormMain.Input id="monsterName" name="monsterName" registerFn={register('monsterName')} />
-      <FormMain.Label htmlFor="monsterLevel">몬스터 레벨</FormMain.Label>
-      <FormMain.Input id="monsterLevel" registerFn={register('level')} />
-      <FormMain.Button text={isUpdateObj.isUpdateText} type="submit" />
-      <FormMain.Button text="초기화" onClick={onClickResetBtn} />
+      <Grid container spacing={2} direction="row" justifyContent="space-around" alignItems="center">
+        <Grid item>
+          <FormMain.Label htmlFor="monsterName" styleID="label_monsterName">
+            몬스터 이름
+          </FormMain.Label>
+          <FormMain.Input
+            id="monsterName"
+            name="monsterName"
+            registerFn={register('monsterName')}
+            styleID="input_monster glass-container"
+          />
+        </Grid>
+        <Grid item>
+          <FormMain.Label htmlFor="monsterLevel">몬스터 레벨</FormMain.Label>
+          <FormMain.Input id="monsterLevel" registerFn={register('level')} styleID="input_monster glass-container" />
+        </Grid>
+      </Grid>
+      <Grid container spacing={4} justifyContent="center" p={1}>
+        <Grid item>
+          <FormMain.Button text={isUpdateObj.isUpdateText} type="submit" styleID="button_monsterAdd" />
+        </Grid>
+        <Grid item>
+          <FormMain.Button text="초기화" onClick={onClickResetBtn} styleID="button_monsterReset" />
+        </Grid>
+      </Grid>
     </FormMain>
   );
 }

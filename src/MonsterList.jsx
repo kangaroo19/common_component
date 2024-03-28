@@ -32,7 +32,6 @@ export default function MonsterList() {
   };
   return (
     <>
-      <h1>몬스터 도감</h1>
       <ul>
         {data?.data.map((item) => {
           return (

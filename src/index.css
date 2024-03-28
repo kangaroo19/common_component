@@ -1,15 +1,26 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./asset/images/wallpaper.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: 'gtr-Bold';
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-
+@font-face {
+  font-family: 'gtr-Regular';
+  font-weight: normal;
+  src: url('./asset/fonts/gtr_Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'gtr-Bold';
+  font-weight: normal;
+  src: url('./asset/fonts/gtr_Bold.ttf') format('truetype');
+}
